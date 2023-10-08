@@ -1,0 +1,11 @@
+0 preview
+ talk
+ eat
+ drink
+ wood
+ water
+ mineral
+ paper
+ pencil
+ keyboard
+ plastic
