@@ -1,5 +1,8 @@
 * {
     box-sizing: border-box;
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
 }
 
 body {
@@ -18,17 +21,17 @@ body {
 
 h1 {
     font-size: 250%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 h2 {
     font-size: 170%;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 h3 {
     font-size: 110%;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .wrapper {
@@ -66,6 +69,11 @@ h3 {
     color: #fff;
 }
 
+/* Setting Page*/
+.setting>div:not(:last-child) {
+    padding-bottom: 70px;
+}
+
 input[type="range"] {
     accent-color: rgb(209, 95, 238);
     width: 250px;
@@ -77,6 +85,32 @@ input[type="range"] {
     border-radius: 3px; */
     position: absolute;
     margin-left: 10px;
+}
+
+.preferencesForm>label {
+    font-size: 120%;
+}
+
+.preferencesForm>label:not(:first-child) {
+    padding-left: 20px;
+}
+
+.preferencesButton {
+    font-size: 100%;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    background-color: rgb(233, 165, 229);
+    border-radius: 14px;
+    border: rgb(179, 58, 174) 3px solid;
+    margin-top: 10px;
+}
+
+.preferencesMessage {
+    font-size: 120%;
+    text-transform: capitalize;
+    opacity: 0;
+    padding-left: 10px;
+    transition: opacity 0.3s;
 }
 
 .player-size-layer {
@@ -105,13 +139,14 @@ input[type="range"] {
     border-radius: 50%;
     border: 6px solid #fff9;
     border-top: 6px solid #39dc;
-    animation: rotate 1s cubic-bezier(.68,.39,.3,.79) infinite;
+    animation: rotate 1s cubic-bezier(.68, .39, .3, .79) infinite;
 }
 
 @keyframes rotate {
     0% {
         transform: rotate(0deg)
     }
+
     100% {
         transform: rotate(360deg)
     }
