@@ -5,11 +5,15 @@ const AdjustMajorVolume = () => {
     const context = useContext(VideoPlayerContext);
 
     return (
-        <div className="adjustMajorVolumeContainer container">
-            <h2>Adjust Major Volume</h2>
+        <section className="adjustMajorVolumeContainer container">
+            <h2>Major Volume Function</h2>
+            <label>
+                <input type="checkbox" className="majorVolumeCheckbox" onChange={(e) => context.actions.setIsMajorVolumeActive(e.target.checked)} checked={context.isMajorVolumeActive}/> Active Major Volume Function
+            </label>
             <input
                 type="range"
                 name="majorvolume"
+                disabled={!context.isMajorVolumeActive}
                 min="0"
                 max="100"
                 step="1"
@@ -17,7 +21,7 @@ const AdjustMajorVolume = () => {
                 onChange={(e) => context.actions.setMajorVolume(e.target.value)}
             />
             <span className="volumeValue">{context.majorVolume}</span>
-        </div>
+        </section>
     );
 }
 

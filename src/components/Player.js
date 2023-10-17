@@ -3,12 +3,12 @@ import ProgressBar from "./ProgressBar";
 
 function Player() {
     return (
-        <div className="wrapper">
+        <main className="wrapper">
             <div className="player-size-layer">
                 <Video />
                 <ProgressBar />
             </div>
-        </div>
+        </main>
     );
 }
 

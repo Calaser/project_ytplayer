@@ -145,8 +145,6 @@ th,
 td,
 caption {
   font-weight: normal;
-  vertical-align: top;
-  text-align: left;
 }
 
 q {
@@ -232,18 +230,6 @@ textarea:-ms-input-placeholder {
 
 textarea:focus {
   border-color: #7c689b;
-}
-
-input {
-  color: #000000;
-  border-radius: 8px;
-  border: 1px solid;
-  padding: 15px;
-  margin-bottom: 15px;
-  outline: none;
-  box-sizing: border-box;
-  font-size: 100%;
-  /* font-size: 16px; */
 }
 
 input::-webkit-input-placeholder {

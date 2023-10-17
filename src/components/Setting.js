@@ -3,11 +3,11 @@ import Preferences from "./setting/Preferences";
 
 const Settings = () => {
     return (
-        <div className="setting wrapper">
+        <main className="setting wrapper">
             <h1>Settings</h1>
             <AdjustMajorVolume />
             <Preferences />
-        </div>
+        </main>
     );
 };
 

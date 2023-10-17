@@ -7,14 +7,14 @@ const Home = () => {
     // const context = useContext(VideoPlayerContext);
 
     return (
-        <div className="wrapper">
+        <main className="wrapper">
             <h1>Recommend Video</h1>
             <Link to="/video/LZh4ioW31J8">Vito ASMR 1</Link>
             <br/>
             <Link to="/video/Gq5bVmgxx30">Vito ASMR 2</Link>
             <br/>
             <Link to="/video/cjS5btICT8Y">Vito ASMR 3</Link>
-        </div>
+        </main>
     );
 };
 
