@@ -15,7 +15,7 @@ function Video() {
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     return (
-        <>
+        <div className="loaderShell">
             <YouTube
                 videoId={id}
                 className={"YouTubePlayer"}
@@ -32,15 +32,16 @@ function Video() {
                     }
                 }}
                 onReady={context.actions.onReady}
-                // onPlay={func}
-                // onPause={func}
-                // onEnd={func}
-                // onError={func}
-                // onStateChange={func}
-                // onPlaybackRateChange={func}
-                // onPlaybackQualityChange={func}
-            /><span className="loader"></span>
-        </>
+            // onPlay={func}
+            // onPause={func}
+            // onEnd={func}
+            // onError={func}
+            // onStateChange={func}
+            // onPlaybackRateChange={func}
+            // onPlaybackQualityChange={func}
+            />
+            <span className="loader" />
+        </div>
     );
 }
 

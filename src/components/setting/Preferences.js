@@ -8,17 +8,19 @@ const Preferences = () => {
     const context = useContext(VideoPlayerContext);
     useEffect(() => {
         context.actions.setTempSkipPreferences(JSON.parse(JSON.stringify(context.skipPreferences)));
-    }, [])
+        // eslint-disable-next-line
+    }, [context.skipPreferences])
 
-    useEffect(() => {
-        console.log(context.tempSkipPreferences);
-    }, [context.tempSkipPreferences])
+    // useEffect(() => {
+    //     console.log(context.tempSkipPreferences);
+    // }, [context.tempSkipPreferences])
 
 
 
     return (
         <section className="preferencesContainer container">
             <h2>skip content</h2>
+            <p className="perferenceDesc">Feel bad about any category? Choose they to skip they in all your ASMR video.</p>
             <table className="preferencesTable">
                 <colgroup>
                     <col />
