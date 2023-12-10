@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 
+import VideoPlayerContext from "./context/VideoPlayerContext";
+import { useContext } from "react";
+
 function Card(props) {
+    const context = useContext(VideoPlayerContext)
     return (
         <div className="card">
-            <Link className="cardLink" to={`/video/${props.videoId}`}>
+            <Link className="cardLink" to={`${context.root}/video/${props.videoId}`}>
                 <div className="cardImg" style={{ backgroundImage: `url(https://i.ytimg.com/vi/${props.videoId}/mqdefault.jpg)` }} >
                     <div className="cardImgInfo">
                         <div className="cardImgInfoTop" />
@@ -14,7 +18,7 @@ function Card(props) {
                 </div>
 
                 <div className="cardInfo">
-                    <img className="cardInfoImg" src={`/channelImg/${props.artist}.jpg`} alt="channel icon of the artist"></img>
+                    <img className="cardInfoImg" src={`${context.root}/channelImg/${props.artist}.jpg`} alt="channel icon of the artist"></img>
                     <div className="cardInfoRight">
                         <div className="cardInfoTitle">
                             {props.title}

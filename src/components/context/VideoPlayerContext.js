@@ -6,6 +6,7 @@ const VideoPlayerContext = createContext(null);
 export default VideoPlayerContext;
 
 export const VideoPlayerProvider = (props) => {
+    const root = "/Project_YTPlayer";
     const [videoId, setVideoId] = useState('');
     const [title, setTitle] = useState('');
     const [player, setPlayer] = useState(null);
@@ -218,10 +219,10 @@ export const VideoPlayerProvider = (props) => {
     useEffect(() => {
         const Intrerval = setInterval(() => {
             // console.log(location.pathname);
-            if (location.pathname !== `/video/${videoId}`) {
+            if (location.pathname !== `${root}/video/${videoId}`) {
                 setPlayer(null);
                 setIsDataUpdate(false);
-                console.log("player reset!");
+                // console.log("player reset!");
                 clearInterval(Intrerval);
             }
         }, 1000)
@@ -321,7 +322,7 @@ export const VideoPlayerProvider = (props) => {
                 document.getElementsByClassName("indicator")[0].style = `margin-left: ${currentTime / videoTime * 100}%`;
             }
         }, 200)
-        if (location.pathname !== `/video/${videoId}`)
+        if (location.pathname !== `${root}/video/${videoId}`)
             clearInterval(interval);
         return () => clearInterval(interval);
     }, [player, location, videoId])
@@ -329,7 +330,7 @@ export const VideoPlayerProvider = (props) => {
     //major volume setting
     useEffect(() => {
         const interval = setInterval(() => {
-            if (location.pathname !== `/video/${videoId}`) {
+            if (location.pathname !== `${root}/video/${videoId}`) {
                 clearInterval(interval);
             }
             if (player && player.getPlayerState() === 1 && parseInt(player.getVolume()) !== parseInt(majorVolume)) {
@@ -362,6 +363,7 @@ export const VideoPlayerProvider = (props) => {
             })
             setSkipPreferences(currentSkipPreferences);
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
@@ -378,6 +380,7 @@ export const VideoPlayerProvider = (props) => {
 
     return (
         <VideoPlayerContext.Provider value={{
+            root,
             videoId,
             title,
             player,
