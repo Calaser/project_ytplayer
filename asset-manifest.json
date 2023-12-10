@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Project_YTPlayer/static/css/main.b64a3b94.css",
+    "main.js": "/Project_YTPlayer/static/js/main.342eae39.js",
+    "index.html": "/Project_YTPlayer/index.html",
+    "main.b64a3b94.css.map": "/Project_YTPlayer/static/css/main.b64a3b94.css.map",
+    "main.342eae39.js.map": "/Project_YTPlayer/static/js/main.342eae39.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b64a3b94.css",
+    "static/js/main.342eae39.js"
+  ]
+}
