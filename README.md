@@ -27,19 +27,23 @@
 
 ## 相關元素
 + HTML
+  - Table
   - Semantic HTML
 + CSS
   - RWD
-    * Media Quary
-    * Responsive Unit (font)
-    * Virtual Keyboard for mobile user
+    * Media Quary / Container Query
+    * Flex (Video list / Card)
+  - Transition
+  - DOM focus accessibility
 + Javascript
-  - ES6 module (CSS / map data)
-  - local storage (map record)
-  - looping for data process and print screen
-  - DOM manipulate according to data
-  - Render function (centralized process)
-+ Vite
+  - Data store / utilize
+  - Local storage
+  - data process and relative DOM create
+  - Youtube iframe API and relative function
++ React
+  - JSX
+  - SPA (React router v6 / useLocation)
+  - Context
 
 ## 資料來源
 Youtube iframe api and relative function:<br />
