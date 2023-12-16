@@ -7,13 +7,9 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     background: #fff;
 }
-
-/* body {
-    font-family: 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-} */
 
 a {
     text-decoration: none;
@@ -22,9 +18,7 @@ a {
 h1,
 h2,
 h3 {
-    font-family: 'Roboto', sans-serif;
     text-transform: capitalize;
-
 }
 
 h1 {
@@ -339,8 +333,8 @@ main {
     position: relative;
     height: 10px;
     background-color: rgb(210 118 250 / 47%);
-        /* border: 3px rgb(136, 43, 100) solid; */
-        margin-top: 5px;
+    /* border: 3px rgb(136, 43, 100) solid; */
+    margin-top: 5px;
     margin-bottom: 15px;
 }
 
