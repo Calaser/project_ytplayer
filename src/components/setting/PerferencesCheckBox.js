@@ -6,8 +6,8 @@ const PerferencesCheckBox = (props) => {
                 className="preferencesCheckbox"
                 id={props.option}
                 checked={props.checked}
-                onClick={props.onClick}
-            /> {props.option}
+                onChange={props.onClick}
+            /> {props.name}
         </label>
     );
 }

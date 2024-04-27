@@ -4,7 +4,8 @@ import VideoPlayerContext from "./context/VideoPlayerContext";
 import { useContext } from "react";
 
 function Card(props) {
-    const context = useContext(VideoPlayerContext)
+    const context = useContext(VideoPlayerContext);
+
     return (
         <div className="card">
             <Link className="cardLink" to={`${context.root}/video/${props.videoId}`}>
@@ -16,19 +17,33 @@ function Card(props) {
                         </div>
                     </div>
                 </div>
+            </Link>
 
-                <div className="cardInfo">
-                    <img className="cardInfoImg" src={`${context.root}/channelImg/${props.artist}.jpg`} alt="channel icon of the artist"></img>
-                    <div className="cardInfoRight">
+            <div className="cardInfo"> {/* mode 0: show artist. 1: don't show */}
+                {
+                    props.mode === 0 ?
+                        <Link to={`${context.root}/artist/${props.artist}`}>
+                            <img className="cardInfoImg" src={`${context.root}/channelImg/${props.artist}.jpg`} alt="channel icon of the artist"></img>
+                        </Link> :
+                        undefined
+                }
+                <div className="cardInfoRight">
+                    <Link className="cardLink" to={`${context.root}/video/${props.videoId}`}>
                         <div className="cardInfoTitle">
                             {props.title}
                         </div>
-                        <div className="cardInfoArtist">
-                            {props.artist}
-                        </div>
-                    </div>
+                    </Link>
+                    {
+                        props.mode === 0 ?
+                            <Link to={`${context.root}/artist/${props.artist}`}>
+                                <div className="cardInfoArtist">
+                                    {props.artist}
+                                </div>
+                            </Link> :
+                            undefined
+                    }
                 </div>
-            </Link>
+            </div>
         </div>
     );
 }

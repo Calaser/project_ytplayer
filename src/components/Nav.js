@@ -8,7 +8,7 @@ const Nav = () => {
 
     return (
         <nav>
-            <Link to={`${context.root}/settings`}>Settings</Link>
+            <Link to={`${context.root}/settings`} data-selected={context.location.pathname === `${context.root}/settings`}>{context.translateData["nav"]["setting"][context.currentLanguage]}</Link>
         </nav>
     );
 };

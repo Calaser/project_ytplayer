@@ -1,0 +1,61 @@
+{
+    "kind": "youtube#channelListResponse",
+    "etag": "qlfcmq4TLe87YedBPwNHIQyc_Sc",
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#channel",
+            "etag": "p1JAxPKqzoEta-In1Dj6bQLBHho",
+            "id": "UCeLzT-7b2PBcunJplmWtoDg",
+            "snippet": {
+                "title": "Patra Channel / 周防パトラ",
+                "description": "Vtuberです！ASMR、ゲーム、雑談、歌など配信しています。個人勢です。\n魔界からヲタク活動したくてやってきた悪魔の女王✨🎮\n癒しにこだわったASMR配信を毎週月曜日24時にしています。\nゲームはジャンル問わず何でも実況！レトロゲーから最新まで実況してます。\n作曲もしてるよ🎵\nI'm a demon queen from the demon world, but I'm having so much fun on earth that I'm now a coffee shop worker and a Vtuber✨I'm so serious about ASMR that I even built a studio dedicated to it ✨Come sleep with me every Monday at 24:00 💕I play games of all genres, from retro games to the latest!\n\nツイッターはこちら（たくさん画像あるよ！）👇Please follow me!\n💕Twitter　https://twitter.com/Patra_HNST\n💕membership　https://www.youtube.com/channel/UCeLzT-7b2PBcunJplmWtoDg/join\n\nハッシュタグ✨\n生配信実況　#パトライブ \nイラスト  #パトラのアトリエ \n切り抜き歓迎   #パトラを見て \n\n【周防パトラTwitter】\nhttps://twitter.com/Patra_HNST\n\nご依頼ありましたらこちらまで！✨\nhttps://ptrsuou.com/\n",
+                "customUrl": "@patra_suou",
+                "publishedAt": "2018-07-08T05:40:35Z",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://yt3.ggpht.com/9lYoXSoJZq4gJaXHriG5Es4aOH6bNftzNJF58YzslvTm9lzdLj_ahcflwauvgIw8nte3TCDamjU=s88-c-k-c0x00ffffff-no-rj",
+                        "width": 88,
+                        "height": 88
+                    },
+                    "medium": {
+                        "url": "https://yt3.ggpht.com/9lYoXSoJZq4gJaXHriG5Es4aOH6bNftzNJF58YzslvTm9lzdLj_ahcflwauvgIw8nte3TCDamjU=s240-c-k-c0x00ffffff-no-rj",
+                        "width": 240,
+                        "height": 240
+                    },
+                    "high": {
+                        "url": "https://yt3.ggpht.com/9lYoXSoJZq4gJaXHriG5Es4aOH6bNftzNJF58YzslvTm9lzdLj_ahcflwauvgIw8nte3TCDamjU=s800-c-k-c0x00ffffff-no-rj",
+                        "width": 800,
+                        "height": 800
+                    }
+                },
+                "localized": {
+                    "title": "Patra Channel / 周防パトラ",
+                    "description": "Vtuberです！ASMR、ゲーム、雑談、歌など配信しています。個人勢です。\n魔界からヲタク活動したくてやってきた悪魔の女王✨🎮\n癒しにこだわったASMR配信を毎週月曜日24時にしています。\nゲームはジャンル問わず何でも実況！レトロゲーから最新まで実況してます。\n作曲もしてるよ🎵\nI'm a demon queen from the demon world, but I'm having so much fun on earth that I'm now a coffee shop worker and a Vtuber✨I'm so serious about ASMR that I even built a studio dedicated to it ✨Come sleep with me every Monday at 24:00 💕I play games of all genres, from retro games to the latest!\n\nツイッターはこちら（たくさん画像あるよ！）👇Please follow me!\n💕Twitter　https://twitter.com/Patra_HNST\n💕membership　https://www.youtube.com/channel/UCeLzT-7b2PBcunJplmWtoDg/join\n\nハッシュタグ✨\n生配信実況　#パトライブ \nイラスト  #パトラのアトリエ \n切り抜き歓迎   #パトラを見て \n\n【周防パトラTwitter】\nhttps://twitter.com/Patra_HNST\n\nご依頼ありましたらこちらまで！✨\nhttps://ptrsuou.com/\n"
+                },
+                "country": "JP"
+            },
+            "statistics": {
+                "viewCount": "289661224",
+                "subscriberCount": "776000",
+                "hiddenSubscriberCount": false,
+                "videoCount": "2244"
+            },
+            "brandingSettings": {
+                "channel": {
+                    "title": "Patra Channel / 周防パトラ",
+                    "description": "Vtuberです！ASMR、ゲーム、雑談、歌など配信しています。個人勢です。\n魔界からヲタク活動したくてやってきた悪魔の女王✨🎮\n癒しにこだわったASMR配信を毎週月曜日24時にしています。\nゲームはジャンル問わず何でも実況！レトロゲーから最新まで実況してます。\n作曲もしてるよ🎵\nI'm a demon queen from the demon world, but I'm having so much fun on earth that I'm now a coffee shop worker and a Vtuber✨I'm so serious about ASMR that I even built a studio dedicated to it ✨Come sleep with me every Monday at 24:00 💕I play games of all genres, from retro games to the latest!\n\nツイッターはこちら（たくさん画像あるよ！）👇Please follow me!\n💕Twitter　https://twitter.com/Patra_HNST\n💕membership　https://www.youtube.com/channel/UCeLzT-7b2PBcunJplmWtoDg/join\n\nハッシュタグ✨\n生配信実況　#パトライブ \nイラスト  #パトラのアトリエ \n切り抜き歓迎   #パトラを見て \n\n【周防パトラTwitter】\nhttps://twitter.com/Patra_HNST\n\nご依頼ありましたらこちらまで！✨\nhttps://ptrsuou.com/\n",
+                    "keywords": "Patra パトラ 周防パトラ Vtuber バーチャルYouTuber バーチャルユーチューバー アニメ Anime VR カワボ 萌え声 アニメ声 Gaming 雑談 talk 虚拟YouTuber Español",
+                    "unsubscribedTrailer": "9rwAw_RbHq4",
+                    "country": "JP"
+                },
+                "image": {
+                    "bannerExternalUrl": "https://yt3.googleusercontent.com/4RJfuHic6MD1_S3CbD4yDnKhmoeo7VQjPA0OCDAqLfWZJEyjMivWOzpbWHi8n9tnhc_PEk22LO4"
+                }
+            }
+        }
+    ]
+}

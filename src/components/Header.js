@@ -10,7 +10,7 @@ const Header = () => {
 
     return (
         <header className="header">
-            <div className="wrapper">
+            <div className="wrapper header-container">
                 <Link to={`${context.root}/`}>
                     <h1 className="header-icon">ASMR Player</h1>
                 </Link>

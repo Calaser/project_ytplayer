@@ -8,7 +8,6 @@ function Video() {
     const context = useContext(VideoPlayerContext);
     let { id } = useParams();
 
-
     var tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -27,7 +26,7 @@ function Video() {
                         // start: `${context.data[id].starttime}`,
                         // stop: sec
                         controls: 1,
-                        autoplay: 0,
+                        autoplay: 1,
                         // playlist: `${id}`, //自動接著撥放
                     }
                 }}

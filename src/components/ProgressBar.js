@@ -13,7 +13,7 @@ function ProgressBar() {
             </div>
             <div className="progressBar">
                 <div className="indicator" />
-                {context.player && context.isDataUpdate ? context.data[context.videoId].map(clip =>
+                {context.player && context.isDataUpdate ? context.videoData[context.videoId]["perference"].map(clip =>
                     <div
                         className={`timeStamp ${clip[2] ? "skip" : ""}`}
                         onClick={clip[2] ? null : () => context.player.seekTo(clip[0])}

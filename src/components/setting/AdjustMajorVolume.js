@@ -6,10 +6,10 @@ const AdjustMajorVolume = () => {
 
     return (
         <section className="adjustMajorVolumeContainer container">
-            <h2>Major Volume Function</h2>
-            <p className="perferenceDesc">Getting tired of changeing volume every time when you starting listening ASMR? Try out this auto-setting volume function.</p>
+            <h2>{context.translateData["setting"]["Volume Auto-Setting"][context.currentLanguage]}</h2>
+            <p className="perferenceDesc">{context.translateData["setting"]["Volume Auto-Setting2"][context.currentLanguage]}</p>
             <label>
-                <input type="checkbox" className="majorVolumeCheckbox" onChange={(e) => context.actions.setIsMajorVolumeActive(e.target.checked)} checked={context.isMajorVolumeActive}/> Active Major Volume Function
+                <input type="checkbox" className="majorVolumeCheckbox" onChange={(e) => context.actions.setIsMajorVolumeActive(e.target.checked)} checked={context.isMajorVolumeActive}/> {context.translateData["setting"]["Volume Auto-Setting3"][context.currentLanguage]}
             </label>
             <input
                 type="range"
