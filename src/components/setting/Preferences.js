@@ -43,7 +43,7 @@ const Preferences = () => {
                                             option={key[0]}
                                             key={key[0]}
                                             checked={context.tempSkipPreferences[key[0]][0]}
-                                            name={context.translateData["setting"][key[0]][context.currentLanguage]}
+                                            name={context.translateData["tag"][key[0]][context.currentLanguage]}
                                             onClick={() => {
                                                 context.actions.setTempSkipPreferences(prev => {
                                                     const next = { ...prev };
@@ -68,7 +68,7 @@ const Preferences = () => {
                                             option={key[0]}
                                             key={key[0]}
                                             checked={context.tempSkipPreferences[key[0]][0]}
-                                            name={context.translateData["setting"][key[0]][context.currentLanguage]}
+                                            name={context.translateData["tag"][key[0]][context.currentLanguage]}
                                             onClick={() => {
                                                 context.actions.setTempSkipPreferences(prev => {
                                                     const next = { ...prev };
@@ -93,7 +93,7 @@ const Preferences = () => {
                                             option={key[0]}
                                             key={key[0]}
                                             checked={context.tempSkipPreferences[key[0]][0]}
-                                            name={context.translateData["setting"][key[0]][context.currentLanguage]}
+                                            name={context.translateData["tag"][key[0]][context.currentLanguage]}
                                             onClick={() => {
                                                 context.actions.setTempSkipPreferences(prev => {
                                                     const next = { ...prev };

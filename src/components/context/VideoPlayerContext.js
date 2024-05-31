@@ -1,4 +1,4 @@
-import { createContext, useEffect, useMemo, useState } from "react";
+import { createContext, useEffect, useMemo, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 const VideoPlayerContext = createContext(null);
@@ -9,8 +9,7 @@ export default VideoPlayerContext;
 export const VideoPlayerProvider = (props) => {
     const root = "/Project_YTPlayer";
     const [videoId, setVideoId] = useState('');
-    const [title, setTitle] = useState('');
-    const [player, setPlayer] = useState(null);
+    const player = useRef(null);
     const [isMajorVolumeActive, setIsMajorVolumeActive] = useState(false);
     const [majorVolume, setMajorVolume] = useState(100);
     const [skipPreferences, setSkipPreferences] = useState(
@@ -22,7 +21,6 @@ export const VideoPlayerProvider = (props) => {
             "keyboard": [false, 0],
             "chalk": [false, 0],
             "soap": [false, 0],
-            "bubblewrap": [false, 0],
             "crystal": [false, 0],
             "plastic": [false, 0],
             "wood": [false, 0],
@@ -34,6 +32,7 @@ export const VideoPlayerProvider = (props) => {
             "foam": [false, 0],
             "spray": [false, 0],
             "sponge": [false, 0],
+            "sand": [false, 0],
 
             "rubbing": [false, 1],
             "scratching": [false, 1],
@@ -64,7 +63,8 @@ export const VideoPlayerProvider = (props) => {
                 "id": "UCxQiPuwF3iaxV_aJOzjQV-Q",
                 "video": {
                     "LZh4ioW31J8": ["ASMR 99.99% of You Will SLEEP 😴💤 ASMR학과 수면학개론 제 1강", 13895],
-                    "Gq5bVmgxx30": ["Guaranteed Sleep for 4 Hours🌙✨ ASMR학과 팅글학개론 제 1강", 15301]
+                    "Gq5bVmgxx30": ["Guaranteed Sleep for 4 Hours🌙✨ ASMR학과 팅글학개론 제 1강", 15301],
+                    "-NDSmFoLGuo": ["ASMR Most Satisfying Kinetic Sand Triggers for Sleep 마이크의 희생이 만들어낸 키네틱샌드 ASMR", 5155]
                 }
             },
             "Patra_Suou": {
@@ -98,7 +98,7 @@ export const VideoPlayerProvider = (props) => {
                     [5352, ["keyboard", "tapping"], false],
                     [5774, ["keyboard", "tapping"], false],
                     [6211, ["keyboard", "tapping"], false],
-                    [6488, ["bubblewrap", "rubbing"], false],
+                    [6488, ["plastic", "rubbing"], false],
                     [7066, ["eartouching", "tapping", "rubbing"], false],
                     [7531, ["eartouching", "rubbing"], false],
                     [7978, ["eartouching", "rubbing"], false],
@@ -175,26 +175,40 @@ export const VideoPlayerProvider = (props) => {
                 ],
                 "artist": "VitoASMR"
             },
+            "-NDSmFoLGuo": {
+                "perference": [
+                    [0, ["opening", "sand", "crushing", "rubbing", "fluffy"], false],
+                    [56, ["plastic", "sand", "wood", "crushing", "metal", "rubbing", "fluffy"], false],
+                    [883, ["sand", "wood", "metal", "crushing", "scratching", "rubbing", "fluffy"], false],
+                    [1260, ["sand", "wood", "crushing", "scratching", "rubbing", "fluffy"], false],
+                    [2161, ["sand", "rubbing", "crushing", "fluffy"], false],
+                    [2880, ["sand", "rubbing", "crushing", "fluffy"], false],
+                    [3549, ["sand", "rubbing", "crushing", "fluffy"], false],
+                    [4291, ["sand", "rubbing", "crushing"], false]
+
+                ],
+                "artist": "VitoASMR"
+            },
             "k0BtUx8NYvM": {
                 "perference": [
                     [0, ["opening", "talking", "whisper", "rubbing"], false],
                     [40, ["whisper", "blowing", "rubbing", "tapping"], false],
-                    [150, ["whisper", "blowing", "rubbing", "paper"], false],
-                    [226, ["whisper", "liquid", "bubble"], false],
-                    [575, ["whisper", "rubbing", "fluffy"], false],
+                    [150, ["paper", "whisper", "blowing", "rubbing"], false],
+                    [226, ["liquid", "whisper", "bubble"], false],
+                    [575, ["rubbing", "whisper", "fluffy"], false],
                     [668, ["whisper", "sponge", "blowing", "rubbing"], false],
                     [812, ["whisper", "blowing", "rubbing", "fluffy"], false],
-                    [944, ["whisper", "blowing", "oil", "rubbing", "eartouching"], false],
+                    [944, ["whisper", "oil", "blowing", "rubbing", "eartouching"], false],
                     [1824, ["whisper", "foam", "rubbing", "eartouching"], false],
-                    [2097, ["whisper", "blowing", "foam", "rubbing", "eartouching", "sponge"], false],
-                    [2281, ["whisper", "blowing", "foam", "rubbing", "eartouching"], false],
-                    [2630, ["whisper", "blowing", "liquid", "rubbing", "fluffy", "eartouching"], false],
+                    [2097, ["whisper", "foam", "sponge", "blowing", "rubbing", "eartouching"], false],
+                    [2281, ["whisper", "foam", "blowing", "rubbing", "eartouching"], false],
+                    [2630, ["whisper", "liquid", "blowing", "rubbing", "fluffy", "eartouching"], false],
                     [2902, ["whisper", "blowing", "rubbing"], false],
                     [3037, ["whisper", "eartouching", "rubbing"], false],
                     [3156, ["whisper", "blowing", "eartouching", "rubbing"], false],
-                    [3330, ["whisper", "tapping", "wood"], false],
-                    [3388, ["whisper", "blowing", "foam", "rubbing"], false],
-                    [4603, ["whisper", "blowing", "liquid", "rubbing"], false],
+                    [3330, ["whisper", "wood", "tapping"], false],
+                    [3388, ["whisper", "foam", "blowing", "rubbing"], false],
+                    [4603, ["whisper", "liquid", "blowing", "rubbing"], false],
                     [4775, ["whisper", "blowing", "brushing"], false],
                     [4877, ["whisper", "blowing", "rubbing"], false],
                     [5130, ["whisper", "rubbing"], false],
@@ -202,13 +216,13 @@ export const VideoPlayerProvider = (props) => {
                     [5616, ["whisper", "rubbing"], false],
                     [5705, ["whisper", "rubbing", "eartouching"], false],
                     [5870, ["whisper", "rubbing", "eartouching", "tapping"], false],
-                    [6077, ["whisper", "blowing", "oil", "eartouching", "rubbing"], false],
+                    [6077, ["whisper", "oil", "blowing", "eartouching", "rubbing"], false],
                     [6598, ["whisper", "eartouching", "rubbing"], false],
                     [6808, ["whisper", "blowing", "oil", "rubbing", "tapping"], false],
                     [6888, ["whisper", "rubbing"], false],
-                    [7047, ["whisper", "blowing", "liquid", "oil", "eartouching", "rubbing", "tapping"], false],
+                    [7047, ["whisper", "liquid", "oil", "blowing", "eartouching", "rubbing", "tapping"], false],
                     [7607, ["liquid"], false],
-                    [7653, ["whisper", "rubbing", "oil"], false],
+                    [7653, ["whisper", "oil", "rubbing"], false],
                     [7704, ["whisper", "blowing", "eartouching", "rubbing"], false],
                     [7776, ["whisper", "blowing", "eartouching", "rubbing"], false],
                     [7966, ["whisper", "blowing", "oil", "eartouching", "rubbing", "tapping"], false],
@@ -304,9 +318,11 @@ export const VideoPlayerProvider = (props) => {
                     "zh-TW": "儲存跳過偏好"
                 },
                 "skip content9": {
-                    "en": "Preferences saved!",
-                    "zh-TW": "偏好已儲存!"
-                },
+                    "en": "Preferences saved",
+                    "zh-TW": "偏好已儲存"
+                }
+            },
+            "tag": {
                 "liquid": {
                     "en": "liquid",
                     "zh-TW": "液體"
@@ -334,10 +350,6 @@ export const VideoPlayerProvider = (props) => {
                 "soap": {
                     "en": "soap",
                     "zh-TW": "肥皂"
-                },
-                "bubblewrap": {
-                    "en": "bubblewrap",
-                    "zh-TW": "氣泡紙"
                 },
                 "crystal": {
                     "en": "crystal",
@@ -382,6 +394,10 @@ export const VideoPlayerProvider = (props) => {
                 "sponge": {
                     "en": "sponge",
                     "zh-TW": "海綿"
+                },
+                "sand": {
+                    "en": "sand",
+                    "zh-TW": "沙子"
                 },
                 "rubbing": {
                     "en": "rubbing",
@@ -474,7 +490,49 @@ export const VideoPlayerProvider = (props) => {
                 "about": {
                     "en": "about",
                     "zh-TW": "關於"
+                }
+            },
+            "artistFavorite": {
+                "btn1": {
+                    "en": "Add Favorite",
+                    "zh-TW": "加入最愛"
                 },
+                "btn2": {
+                    "en": "Favorited",
+                    "zh-TW": "已加最愛"
+                }
+            },
+            "video": {
+                "previous part": {
+                    "en": "Previous Part",
+                    "zh-TW": "前一段落"
+                },
+                "this part": {
+                    "en": "This Part",
+                    "zh-TW": "本段落"
+                },
+                "next part": {
+                    "en": "Next Part",
+                    "zh-TW": "下一段落"
+                },
+                "show more": {
+                    "en": "Show More",
+                    "zh-TW": "顯示更多"
+                },
+                "show less": {
+                    "en": "Show Less",
+                    "zh-TW": "顯示部分"
+                },
+                "same artist": {
+                    "en": "More from same artist",
+                    "zh-TW": "同作者的其他作品"
+                },
+                "other artist": {
+                    "en": "More from other artists",
+                    "zh-TW": "其他作者的作品"
+                }
+            },
+            "meter": {
                 "unit1": {
                     "en": "K",
                     "zh-TW": "萬"
@@ -490,16 +548,34 @@ export const VideoPlayerProvider = (props) => {
                 "sub": {
                     "en": "subscribers",
                     "zh-TW": "位訂閱者"
-                }
-            },
-            "artistFavorite": {
-                "btn1": {
-                    "en": "Add Favorite",
-                    "zh-TW": "加入最愛"
                 },
-                "btn2": {
-                    "en": "Favorited",
-                    "zh-TW": "已加最愛"
+                "view": {
+                    "en": "views",
+                    "zh-TW": "觀看次數"
+                },
+                "time unit1": {
+                    "en": "seconds ago",
+                    "zh-TW": "秒前"
+                },
+                "time unit2": {
+                    "en": "minutes ago",
+                    "zh-TW": "分鐘前"
+                },
+                "time unit3": {
+                    "en": "hours ago",
+                    "zh-TW": "小時前"
+                },
+                "time unit4": {
+                    "en": "days ago",
+                    "zh-TW": "天前"
+                },
+                "time unit5": {
+                    "en": "months ago",
+                    "zh-TW": "個月前"
+                },
+                "time unit6": {
+                    "en": "years ago",
+                    "zh-TW": "年前"
                 }
             },
         }
@@ -508,28 +584,11 @@ export const VideoPlayerProvider = (props) => {
     const [currentLanguage, setCurrentLanguage] = useState("en");
 
     const location = useLocation();
-    const [isDataUpdate, setIsDataUpdate] = useState(false);
-
 
     const onReady = (e) => {
-        setPlayer(e.target);
         document.getElementsByClassName("loader")[0].setAttribute("style", "display: none;");
-        setVideoId(e.target.getVideoData().video_id);
-        setTitle(e.target.getVideoData().title);
+        player.current = e.target;
     };
-
-    useEffect(() => {
-        const Intrerval = setInterval(() => {
-            if (location.pathname !== `${root}/video/${videoId}`) {
-                setPlayer(null);
-                setIsDataUpdate(false);
-                clearInterval(Intrerval);
-            }
-        }, 1000)
-
-        return () => clearInterval(Intrerval);
-    }, [location, videoId])
-
 
     const saveSkipPreferences = () => {
         setSkipPreferences(JSON.parse(JSON.stringify(tempSkipPreferences)));
@@ -541,114 +600,37 @@ export const VideoPlayerProvider = (props) => {
         }, 2500)
     };
 
+    const unitConverter = (number, digitShowDecimalPlace) => {
+        // digitShowDecimalPlace(default): 1 for views, 2 for subs
+        return (
+            number >= translateData["meter"]["divisor"][currentLanguage] ** 2 ?
+                number / translateData["meter"]["divisor"][currentLanguage] ** 2 < (10 ** digitShowDecimalPlace) ?
+                    `${Math.floor(number * 10 / translateData["meter"]["divisor"][currentLanguage] ** 2) / 10} ${translateData["meter"]["unit2"][currentLanguage]}` :
+                    `${Math.floor(number / translateData["meter"]["divisor"][currentLanguage] ** 2)} ${translateData["meter"]["unit2"][currentLanguage]}` :
+                (number >= translateData["meter"]["divisor"][currentLanguage] ?
+                    number / translateData["meter"]["divisor"][currentLanguage] < (10 ** digitShowDecimalPlace) ?
+                        `${Math.floor(number * 10 / translateData["meter"]["divisor"][currentLanguage]) / 10} ${translateData["meter"]["unit1"][currentLanguage]}` :
+                        `${Math.floor(number / translateData["meter"]["divisor"][currentLanguage])} ${translateData["meter"]["unit1"][currentLanguage]}` :
+                    `${number} ${translateData["meter"]["view"][currentLanguage]}`
+                )
+        )
+    };
 
-    useEffect(() => {
-        if (player) { //初始reset
-            const resetTime = setInterval(() => {
-                if (player.getPlayerState() === 1) {
-                    player.seekTo(0);
-                    clearInterval(resetTime);
-                }
-            }, 200)
-        }
-
-
-        if (player) {
-            // 獲取影片ID
-            let id = player.getVideoUrl().slice(-11);
-            // console.log(videoData[id][perference]);
-            // videoData[id][perference] 為該影片的資料 clip為其中一個片段的資料 clip[1]是該片段的所有tag clip[2]目前用來記錄該片段是否跳過
-            videoData[id]["perference"].forEach(clip => {
-                clip[1].every(tag => { //every:forEach but need a return: true = loop continued / false = loop break, use break for currectly multi tag check
-                    if (skipPreferences[tag] === undefined) {
-                        console.log(`影片資料中含有錯誤tag: ${tag}`);
-                        return true;
-                    }
-                    if (skipPreferences[tag][0]) {
-                        clip[2] = true;
-                        return false;
-                    }
-                    else {
-                        clip[2] = false;
-                        return true;
-                    }
-                });
-            })
-            setIsDataUpdate(true);
-        }
-        // 將videoData做成interval 每時間單位檢查對應秒數是否跳過 若是 則秒數跳到下一段
-        const interval = setInterval(() => {
-            if (player && player.getPlayerState() === 1) {
-                // 獲取影片ID
-                let id = player.getVideoUrl().slice(-11);
-                let time = 0;
-                let currentTime = player.getCurrentTime().toFixed(0);
-                for (let i = 0; videoData[id]["perference"][i]; i++) {
-                    if (currentTime >= videoData[id]["perference"][i][0] && currentTime < (videoData[id]["perference"][i + 1] ? videoData[id]["perference"][i + 1][0] : Infinity) && videoData[id]["perference"][i][2]) { //符合skip條件
-                        // console.log(`第${i}段觸發
-                        //                 現在秒數:${currentTime}
-                        //                 時間段為${videoData[id]["perference"][i][0]}~${(videoData[id]["perference"][i + 1] ? videoData[id]["perference"][i + 1][0] : "last")}
-                        // `);
-                        let j = i + 1;
-                        while (true) { //若後面有連接著的跳過則記錄完才一次跳過
-                            if (!videoData[id]["perference"][j]) { //本part為最後一段
-                                time = 99999;
-                                break;
-                            }
-                            else if (!videoData[id]["perference"][j][2]) { //非最後但skip到此為止
-                                time = videoData[id]["perference"][j][0];
-                                break;
-                            }
-
-                            j++;
-                        }
-
-                        break;
-                    }
-                }
-                if (time) {
-                    player.seekTo(time);
-                    // maybe pop a message to prompt user some part is skipped.
-                }
-            }
-        }, 500)
-        return () => clearInterval(interval);
-    }, [player, videoData, skipPreferences])
-
-
-    // progressing bar time stamp maker
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (player) {
-                let currentTime = player.getCurrentTime().toFixed(0);
-                let videoTime = player.getDuration().toFixed(0);
-                document.getElementsByClassName("indicator")[0].style = `margin-left: ${currentTime / videoTime * 100}%`;
-            }
-        }, 200)
-        if (location.pathname !== `${root}/video/${videoId}`)
-            clearInterval(interval);
-        return () => clearInterval(interval);
-    }, [player, location, videoId])
-
-    // major volume setting
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (location.pathname !== `${root}/video/${videoId}`) {
-                clearInterval(interval);
-            }
-            if (player && player.getPlayerState() === 1 && parseInt(player.getVolume()) !== parseInt(majorVolume)) {
-                player.setVolume(majorVolume);
-            }
-        }, 1000);
-        if (!isMajorVolumeActive) {
-            clearInterval(interval);
-        }
-    }, [isMajorVolumeActive, majorVolume, player, location, videoId])
+    const timeConverter = (time) => {
+        return (
+            (new Date() - new Date(time)) >= 31557600000 ? `${Math.floor(((new Date() - new Date(time)) / 31557600000))} ${translateData["meter"]["time unit6"][currentLanguage]}` :
+                (new Date() - new Date(time)) >= 2592000000 ? `${Math.floor(((new Date() - new Date(time)) / 2592000000))} ${translateData["meter"]["time unit5"][currentLanguage]}` :
+                    (new Date() - new Date(time)) >= 86400000 ? `${Math.floor(((new Date() - new Date(time)) / 86400000))} ${translateData["meter"]["time unit4"][currentLanguage]}` :
+                        (new Date() - new Date(time)) >= 3600000 ? `${Math.floor(((new Date() - new Date(time)) / 3600000))} ${translateData["meter"]["time unit3"][currentLanguage]}` :
+                            (new Date() - new Date(time)) >= 60000 ? `${Math.floor(((new Date() - new Date(time)) / 60000))} ${translateData["meter"]["time unit2"][currentLanguage]}` :
+                                `${Math.floor(((new Date() - new Date(time)) / 1000))} ${translateData["meter"]["time unit1"][currentLanguage]}`
+        )
+    };
 
     // dynamic data loading function
-    async function importAPIData(id) {
+    async function importAPIData(id, type) {
         try {
-            const module = await import(`../../youtubeDataAPI/${id}.json`);
+            const module = await import(`../../youtubeDataAPI/${type}/${id}.json`);
             return module;
         } catch (error) {
             console.log(error);
@@ -710,7 +692,6 @@ export const VideoPlayerProvider = (props) => {
         <VideoPlayerContext.Provider value={{
             root,
             videoId,
-            title,
             player,
             majorVolume,
             isMajorVolumeActive,
@@ -718,24 +699,23 @@ export const VideoPlayerProvider = (props) => {
             tempSkipPreferences,
             artistData,
             videoData,
-            isDataUpdate,
             location,
             translateData,
             currentLanguage,
             artistFavoriteData,
             actions: {
                 setVideoId: setVideoId,
-                setPlayer: setPlayer,
                 setMajorVolume: setMajorVolume,
                 setIsMajorVolumeActive: setIsMajorVolumeActive,
                 setSkipPreferences: setSkipPreferences,
                 setTempSkipPreferences: setTempSkipPreferences,
                 saveSkipPreferences: saveSkipPreferences,
                 onReady: onReady,
-                setIsDataUpdate: setIsDataUpdate,
                 setCurrentLanguage: setCurrentLanguage,
                 importAPIData: importAPIData,
-                setArtistFavoriteData: setArtistFavoriteData
+                setArtistFavoriteData: setArtistFavoriteData,
+                unitConverter: unitConverter,
+                timeConverter: timeConverter
             }
         }}>
             {props.children}

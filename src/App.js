@@ -6,7 +6,7 @@ import VideoPlayerContext from './components/context/VideoPlayerContext';
 import Header from './components/Header';
 import Home from './components/Home';
 import Settings from './components/Setting';
-import Player from './components/Player';
+import Video from './components/Video';
 import NotFound from './components/NotFound';
 import Artist from './components/Artist';
 
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path={`${context.root}`} element={<Home />} />
         <Route path={`${context.root}/settings`} element={<Settings />} />
-        <Route path={`${context.root}/video/:id`} element={<Player />} />
+        <Route path={`${context.root}/video/:id`} element={<Video />} />
         <Route path={`${context.root}/artist/:artist`} element={<Artist />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

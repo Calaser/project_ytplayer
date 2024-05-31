@@ -1,10 +1,20 @@
+import { useContext, useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import VideoPlayerContext from "./context/VideoPlayerContext";
-import { useContext } from "react";
 
 function Card(props) {
     const context = useContext(VideoPlayerContext);
+
+    const [apiData, setAPIData] = useState();
+
+    useEffect(() => {
+        context.actions.importAPIData(props.videoId, "video")
+            .then(module => {
+                setAPIData(module["items"][0]);
+            })
+    }, [context.actions, context.artistData, props.videoId]);
 
     return (
         <div className="card">
@@ -42,9 +52,14 @@ function Card(props) {
                             </Link> :
                             undefined
                     }
+                    <div className="cardInfoVideo">
+                        {apiData && `${context.actions.unitConverter(apiData["statistics"]["viewCount"], 1)} ${context.translateData["meter"]["view"][context.currentLanguage]}`}
+                        <span className="dot">‧</span>
+                        {apiData && context.actions.timeConverter(apiData["snippet"]["publishedAt"])}
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 

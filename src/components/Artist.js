@@ -13,7 +13,7 @@ const Artist = () => {
     const [apiData, setAPIData] = useState();
 
     useEffect(() => {
-        context.actions.importAPIData(context.artistData[artist]["id"])
+        context.actions.importAPIData(context.artistData[artist]["id"], "artist")
             .then(module => {
                 setAPIData(module["items"][0]);
             })
@@ -35,14 +35,7 @@ const Artist = () => {
                     <div className="artistInfoContent">
                         <span>{apiData && apiData["snippet"]["customUrl"]}</span>
                         <span className="dot">‧</span>
-                        <span>{apiData && (
-                            apiData["statistics"]["subscriberCount"] >= context.translateData["artist"]["divisor"][context.currentLanguage] ** 2 ?
-                                `${apiData["statistics"]["subscriberCount"] / context.translateData["artist"]["divisor"][context.currentLanguage] ** 2}${context.translateData["artist"]["unit2"][context.currentLanguage]}` :
-                                (apiData["statistics"]["subscriberCount"] >= context.translateData["artist"]["divisor"][context.currentLanguage] ?
-                                    `${apiData["statistics"]["subscriberCount"] / context.translateData["artist"]["divisor"][context.currentLanguage]}${context.translateData["artist"]["unit1"][context.currentLanguage]}` :
-                                    apiData["statistics"]["subscriberCount"]
-                                )
-                        )} {context.translateData["artist"]["sub"][context.currentLanguage]}</span>
+                        <span>{apiData && `${context.actions.unitConverter(apiData["statistics"]["subscriberCount"], 2)} ${context.translateData["meter"]["sub"][context.currentLanguage]}`}</span>
                         <span className="dot">‧</span>
                         <span>{apiData && ` ${apiData["statistics"]["videoCount"]} ${context.translateData["artist"]["video"][context.currentLanguage]}`}</span>
                         <div className="artistInfoDescription" onClick={() => setIsDescriptionWindowOpen(true)}>
