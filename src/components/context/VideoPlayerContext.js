@@ -640,15 +640,15 @@ export const VideoPlayerProvider = (props) => {
     //setting localStorage part
     useEffect(() => {
         const getCurrentLanguage = JSON.parse(localStorage.getItem("currentLanguage"));
-        if (getCurrentLanguage !== undefined)
+        if (getCurrentLanguage !== undefined && getCurrentLanguage !== null)
             setCurrentLanguage(getCurrentLanguage);
 
         const getIsMajorVolumeActive = JSON.parse(localStorage.getItem("isMajorVolumeActive"));
-        if (getIsMajorVolumeActive !== undefined)
+        if (getIsMajorVolumeActive !== undefined && getIsMajorVolumeActive !== null)
             setIsMajorVolumeActive(getIsMajorVolumeActive);
 
         const getMajorVolume = JSON.parse(localStorage.getItem("majorVolume"));
-        if (getMajorVolume !== undefined)
+        if (getMajorVolume !== undefined && getMajorVolume !== null)
             setMajorVolume(getMajorVolume);
 
         if (JSON.parse(localStorage.getItem("skipPreferences"))) { //僅更新項目狀態以避免更新後的項目被舊版的項目覆寫
@@ -662,7 +662,7 @@ export const VideoPlayerProvider = (props) => {
         }
 
         const getArtistFavoriteData = JSON.parse(localStorage.getItem("artistFavoriteData"));
-        if (getArtistFavoriteData !== undefined)
+        if (getArtistFavoriteData !== undefined && getArtistFavoriteData !== null)
             setArtistFavoriteData(getArtistFavoriteData);
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
