@@ -13,7 +13,7 @@ const Artist = () => {
     const [apiData, setAPIData] = useState();
 
     useEffect(() => {
-        context.actions.importAPIData(context.artistData[artist]["id"], "artist")
+        context.actions.importYTDataAPI(context.artistData[artist]["id"], "artist")
             .then(module => {
                 setAPIData(module["items"][0]);
             })

@@ -3,20 +3,20 @@ import { useParams } from "react-router-dom";
 
 import VideoPlayerContext from "../context/VideoPlayerContext";
 
-function ClipButton() {
+function ClipButton({videoData}) {
     const context = useContext(VideoPlayerContext);
 
     const { id } = useParams();
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (context.player.current && (context.player.current.getPlayerState() === 1 || context.player.current.getPlayerState() === 2 || context.player.current.getPlayerState() === 3)) {
+            if (videoData && context.player.current && (context.player.current.getPlayerState() === 1 || context.player.current.getPlayerState() === 2 || context.player.current.getPlayerState() === 3)) {
                 let currentTime = context.player.current.getCurrentTime().toFixed(0);
 
-                for (let i = 1; context.videoData[id]["perference"][i]; i++) {
-                    if (currentTime < context.videoData[id]["perference"][i][0]) {
+                for (let i = 1; videoData["preference"][i]; i++) {
+                    if (currentTime < videoData["preference"][i][0]) {
                         if (i > 1) {
-                            document.getElementsByClassName("clipTagPrev")[0].innerText = `${context.videoData[id]["perference"][i - 2][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
+                            document.getElementsByClassName("clipTagPrev")[0].innerText = `${videoData["preference"][i - 2][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
                             if (document.getElementsByClassName("clipButtonPrev")[0].classList.contains("unavailable")) {
                                 document.getElementsByClassName("clipButtonPrev")[0].classList.remove("unavailable")
                             }
@@ -25,36 +25,36 @@ function ClipButton() {
                             document.getElementsByClassName("clipTagPrev")[0].innerText = "";
                             document.getElementsByClassName("clipButtonPrev")[0].classList.add("unavailable");
                         }
-                        document.getElementsByClassName("clipTagNow")[0].innerText = `${context.videoData[id]["perference"][i - 1][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
-                        document.getElementsByClassName("clipTagNext")[0].innerText = `${context.videoData[id]["perference"][i][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
+                        document.getElementsByClassName("clipTagNow")[0].innerText = `${videoData["preference"][i - 1][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
+                        document.getElementsByClassName("clipTagNext")[0].innerText = `${videoData["preference"][i][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
                         break;
                     }
                     //last part
-                    if (!context.videoData[id]["perference"][i + 1]) {
-                        document.getElementsByClassName("clipTagPrev")[0].innerText = `${context.videoData[id]["perference"][i - 1][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
-                        document.getElementsByClassName("clipTagNow")[0].innerText = `${context.videoData[id]["perference"][i][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
+                    if (!videoData["preference"][i + 1]) {
+                        document.getElementsByClassName("clipTagPrev")[0].innerText = `${videoData["preference"][i - 1][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
+                        document.getElementsByClassName("clipTagNow")[0].innerText = `${videoData["preference"][i][1].map(tag => context.translateData["tag"][tag][context.currentLanguage]).join(", ")}`;
                         document.getElementsByClassName("clipTagNext")[0].innerText = "End";
                     }
                 }
             }
         }, 300)
         return () => clearInterval(interval);
-    }, [id, context.player, context.videoData, context.translateData, context.currentLanguage])
+    }, [id, context.player, videoData, context.translateData, context.currentLanguage])
 
     function clickBtn(mode) {
         let currentTime = context.player.current.getCurrentTime().toFixed(0);
-        for (let i = 1; context.videoData[id]["perference"][i]; i++) {
-            if (currentTime < context.videoData[id]["perference"][i][0]) {
+        for (let i = 1; videoData["preference"][i]; i++) {
+            if (currentTime < videoData["preference"][i][0]) {
                 switch (mode) {
                     case -1:
                         if (i >= 2)
-                            context.player.current.seekTo(context.videoData[id]["perference"][i - 2][0]);
+                            context.player.current.seekTo(videoData["preference"][i - 2][0]);
                         break;
                     case 0:
-                        context.player.current.seekTo(context.videoData[id]["perference"][i - 1][0]);
+                        context.player.current.seekTo(videoData["preference"][i - 1][0]);
                         break;
                     case 1:
-                        context.player.current.seekTo(context.videoData[id]["perference"][i][0]);
+                        context.player.current.seekTo(videoData["preference"][i][0]);
                         break;
                     default:
                         console.log("Unexpected clickBtn mode!");
@@ -62,13 +62,13 @@ function ClipButton() {
                 break;
             }
             //last part
-            if (!context.videoData[id]["perference"][i + 1]) {
+            if (!videoData["preference"][i + 1]) {
                 switch (mode) {
                     case -1:
-                        (i > 2) ? context.player.current.seekTo(context.videoData[id]["perference"][i - 1][0]) : context.player.current.seekTo(0);
+                        (i > 2) ? context.player.current.seekTo(videoData["preference"][i - 1][0]) : context.player.current.seekTo(0);
                         break;
                     case 0:
-                        context.player.current.seekTo(context.videoData[id]["perference"][i][0]);
+                        context.player.current.seekTo(videoData["preference"][i][0]);
                         break;
                     case 1:
                         context.player.current.seekTo(context.player.current.getDuration().toFixed(0) - 1); //this line is for fix display bug

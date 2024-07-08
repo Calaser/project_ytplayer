@@ -1,0 +1,12 @@
+{
+    "preference": [
+        [0, ["opening"], false],
+        [19, ["whisper", "blowing", "rubbing", "liquid", "spray", "eartouching"], false],
+        [366, ["whisper", "eartouching", "rubbing", "oil", "blowing", "brushing", "talking"], false],
+        [1006, ["whisper", "rubbing", "foam", "brushing", "sponge", "eartouching", "liquid"], false],
+        [1755, ["whisper", "rubbing", "eartouching", "oil", "blowing"], false],
+        [2623, ["whisper", "rubbing", "brushing"], false],
+        [2955, ["whisper", "rubbing", "eartouching", "heartbeat", "talking"], false]
+    ],
+    "artist": "Patra_Suou"
+}

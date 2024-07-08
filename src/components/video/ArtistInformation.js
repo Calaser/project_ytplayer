@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import VideoPlayerContext from "../context/VideoPlayerContext";
@@ -11,12 +11,18 @@ function ArtistInformation() {
     const [apiData, setAPIData] = useState();
 
     let { id } = useParams();
-    let artist = useMemo(() =>
-        context.videoData[id]["artist"]
-        , [context.videoData, id]);
+    const [artist, setArtist] = useState(null);
 
     useEffect(() => {
-        context.actions.importAPIData(context.artistData[artist]["id"], "artist")
+        context.actions.importInnerDataAPI(id, "video")
+            .then(module => {
+                setArtist(module["artist"]);
+            })
+        },[context.actions, id])
+
+    useEffect(() => {
+        if(artist)
+        context.actions.importYTDataAPI(context.artistData[artist]["id"], "artist")
             .then(module => {
                 setAPIData(module["items"][0]);
             })

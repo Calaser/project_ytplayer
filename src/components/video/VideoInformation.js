@@ -16,7 +16,7 @@ function VideoInformation() {
     }, [id])
 
     useEffect(() => {
-        context.actions.importAPIData(id, "video")
+        context.actions.importYTDataAPI(id, "video")
             .then(module => {
                 setAPIData(module["items"][0]);
             })

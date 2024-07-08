@@ -1,0 +1,14 @@
+{
+    "preference": [
+        [0, ["opening", "sand", "crushing", "rubbing", "fluffy"], false],
+        [56, ["plastic", "sand", "wood", "crushing", "metal", "rubbing", "fluffy"], false],
+        [883, ["sand", "wood", "metal", "crushing", "scratching", "rubbing", "fluffy"], false],
+        [1260, ["sand", "wood", "crushing", "scratching", "rubbing", "fluffy"], false],
+        [2161, ["sand", "rubbing", "crushing", "fluffy"], false],
+        [2880, ["sand", "rubbing", "crushing", "fluffy"], false],
+        [3549, ["sand", "rubbing", "crushing", "fluffy"], false],
+        [4291, ["sand", "rubbing", "crushing"], false]
+
+    ],
+    "artist": "VitoASMR"
+}

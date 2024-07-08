@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 
 import VideoPlayerContext from "../context/VideoPlayerContext";
 
-function ProgressBar() {
+function ProgressBar({videoData}) {
     const context = useContext(VideoPlayerContext);
-
+    
     const [duration, setDuration] = useState(null);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ function ProgressBar() {
             <div className="progressBar">
                 <div className="indicator" />
                 {
-                    context.videoData[context.location.pathname.slice(-11)]["perference"].map(clip =>
+                    videoData && videoData["preference"].map(clip =>
                         <div
                             className={`timeStamp ${clip[2] ? "skip" : ""}`}
                             onClick={clip[2] ? null : () => context.player.current.seekTo(clip[0])}

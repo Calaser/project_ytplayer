@@ -82,180 +82,6 @@ export const VideoPlayerProvider = (props) => {
         "Patra_Suou": false
     })
 
-    const videoData = useMemo(() => (
-        {
-            "LZh4ioW31J8": {
-                "perference": [
-                    [0, ["multicategory", "opening"], false], //starting time / category / isThisPartSkipped
-                    [147, ["multicategory", "opening"], false],
-                    [564, ["pencil", "paper"], false],
-                    [1053, ["keyboard", "tapping"], false],
-                    [1508, ["chalk", "liquid", "crushing", "carving"], false],
-                    [3120, ["chalk", "carving", "brushing"], false],
-                    [3533, ["keyboard", "tapping"], false],
-                    [4207, ["keyboard", "tapping"], false],
-                    [4810, ["keyboard", "tapping"], false],
-                    [5352, ["keyboard", "tapping"], false],
-                    [5774, ["keyboard", "tapping"], false],
-                    [6211, ["keyboard", "tapping"], false],
-                    [6488, ["plastic", "rubbing"], false],
-                    [7066, ["eartouching", "tapping", "rubbing"], false],
-                    [7531, ["eartouching", "rubbing"], false],
-                    [7978, ["eartouching", "rubbing"], false],
-                    [8429, ["scratching"], false],
-                    [8825, ["scratching"], false],
-                    [9256, ["crystal", "scratching"], false],
-                    [10028, ["soap", "sticky", "rubbing"], false],
-                    [10397, ["soap", "scratching", "rubbing"], false],
-                    [10822, ["soap", "sticky", "rubbing", "scratching", "tapping"], false],
-                    [11337, ["soap", "rubbing", "scratching"], false],
-                    [11600, ["rubbing"], false],
-                    [11844, ["rubbing", "tapping", "scratching"], false],
-                    [12546, ["liquid", "bubble"], false],
-                    [12947, ["tapping", "rubbing"], false],
-                    [13392, ["tapping"], false]
-                ],
-                "artist": "VitoASMR"
-            },
-            "Gq5bVmgxx30": {
-                "perference": [
-                    [0, ["multicategory", "opening"], false],
-                    [314, ["plastic", "tapping", "rubbing"], false],
-                    [1039, ["plastic", "tapping", "rubbing"], false],
-                    [1448, ["plastic", "scratching"], false],
-                    [1608, ["wood", "tapping", "scratching", "tapping"], false],
-                    [2424, ["nut", "scratching"], false],
-                    [2542, ["nut", "scratching"], false],
-                    [2690, ["nut", "tapping", "rubbing"], false],
-                    [2783, ["nut", "tapping", "rubbing"], false],
-                    [2884, ["nut", "rubbing"], false],
-                    [3342, ["metal", "scratching"], false],
-                    [4179, ["soap", "tapping", "scratching"], false],
-                    [4658, ["soap", "sticky", "tapping", "rubbing", "scratching"], false],
-                    [5443, ["soap", "tapping", "scratching", "rubbing"], false],
-                    [5808, ["soap", "tapping", "scratching", "carving"], false],
-                    [6021, ["soap", "scratching", "carving"], false],
-                    [6167, ["soap", "carving"], false],
-                    [6295, ["soap", "rubbing", "scratching"], false],
-                    [6556, ["soap", "carving", "tapping"], false],
-                    [6681, ["soap", "rubbing", "scratching"], false],
-                    [6854, ["soap", "tapping", "scratching"], false],
-                    [7515, ["soap", "carving", "rubbing"], false],
-                    [7794, ["soap", "carving", "scratching"], false],
-                    [7873, ["soap", "tapping", "scratching", "rubbing", "sticky"], false],
-                    [8205, ["liquid", "bubble", "tapping"], false],
-                    [8574, ["liquid", "tapping"], false],
-                    [8867, ["liquid", "tapping"], false],
-                    [9126, ["liquid", "tapping"], false],
-                    [9256, ["liquid", "bubble"], false],
-                    [9383, ["liquid", "bubble"], false],
-                    [9440, ["glass", "scratching", "tapping"], false],
-                    [9539, ["glass", "liquid", "bubble", "scratching", "tapping"], false],
-                    [10018, ["liquid", "bubble"], false],
-                    [10389, ["rubbing", "sticky", "tapping", "eartouching"], false],
-                    [10636, ["rubbing", "tapping", "eartouching", "blowing", "fluffy"], false],
-                    [10936, ["rubbing", "tapping", "eartouching", "blowing"], false],
-                    [11502, ["rubbing", "scratching", "tapping", "eartouching", "blowing", "fluffy"], false],
-                    [11881, ["rubbing", "tapping", "eartouching", "blowing", "fluffy"], false],
-                    [12071, ["rubbing", "fluffy", "tapping"], false],
-                    [12265, ["rubbing"], false],
-                    [12464, ["rubbing"], false],
-                    [12744, ["rubbing"], false],
-                    [12860, ["paper", "rubbing", "sticky"], false],
-                    [13765, ["rubbing", "tapping", "eartouching"], false],
-                    [13249, ["blowing"], false],
-                    [13269, ["plastic", "tapping"], false],
-                    [13548, ["gel", "sticky", "rubbing", "tapping"], false],
-                    [13788, ["gel", "sticky", "rubbing", "tapping"], false],
-                    [13967, ["gel", "sticky", "rubbing", "tapping"], false],
-                    [14125, ["oil", "rubbing"], false],
-                    [14426, ["rubbing"], false],
-                    [14906, ["rubbing"], false],
-                    [15014, ["liquid"], false]
-                ],
-                "artist": "VitoASMR"
-            },
-            "-NDSmFoLGuo": {
-                "perference": [
-                    [0, ["opening", "sand", "crushing", "rubbing", "fluffy"], false],
-                    [56, ["plastic", "sand", "wood", "crushing", "metal", "rubbing", "fluffy"], false],
-                    [883, ["sand", "wood", "metal", "crushing", "scratching", "rubbing", "fluffy"], false],
-                    [1260, ["sand", "wood", "crushing", "scratching", "rubbing", "fluffy"], false],
-                    [2161, ["sand", "rubbing", "crushing", "fluffy"], false],
-                    [2880, ["sand", "rubbing", "crushing", "fluffy"], false],
-                    [3549, ["sand", "rubbing", "crushing", "fluffy"], false],
-                    [4291, ["sand", "rubbing", "crushing"], false]
-
-                ],
-                "artist": "VitoASMR"
-            },
-            "k0BtUx8NYvM": {
-                "perference": [
-                    [0, ["opening", "talking", "whisper", "rubbing"], false],
-                    [40, ["whisper", "blowing", "rubbing", "tapping"], false],
-                    [150, ["paper", "whisper", "blowing", "rubbing"], false],
-                    [226, ["liquid", "whisper", "bubble"], false],
-                    [575, ["rubbing", "whisper", "fluffy"], false],
-                    [668, ["whisper", "sponge", "blowing", "rubbing"], false],
-                    [812, ["whisper", "blowing", "rubbing", "fluffy"], false],
-                    [944, ["whisper", "oil", "blowing", "rubbing", "eartouching"], false],
-                    [1824, ["whisper", "foam", "rubbing", "eartouching"], false],
-                    [2097, ["whisper", "foam", "sponge", "blowing", "rubbing", "eartouching"], false],
-                    [2281, ["whisper", "foam", "blowing", "rubbing", "eartouching"], false],
-                    [2630, ["whisper", "liquid", "blowing", "rubbing", "fluffy", "eartouching"], false],
-                    [2902, ["whisper", "blowing", "rubbing"], false],
-                    [3037, ["whisper", "eartouching", "rubbing"], false],
-                    [3156, ["whisper", "blowing", "eartouching", "rubbing"], false],
-                    [3330, ["whisper", "wood", "tapping"], false],
-                    [3388, ["whisper", "foam", "blowing", "rubbing"], false],
-                    [4603, ["whisper", "liquid", "blowing", "rubbing"], false],
-                    [4775, ["whisper", "blowing", "brushing"], false],
-                    [4877, ["whisper", "blowing", "rubbing"], false],
-                    [5130, ["whisper", "rubbing"], false],
-                    [5297, ["whisper", "blowing", "eartouching", "rubbing"], false],
-                    [5616, ["whisper", "rubbing"], false],
-                    [5705, ["whisper", "rubbing", "eartouching"], false],
-                    [5870, ["whisper", "rubbing", "eartouching", "tapping"], false],
-                    [6077, ["whisper", "oil", "blowing", "eartouching", "rubbing"], false],
-                    [6598, ["whisper", "eartouching", "rubbing"], false],
-                    [6808, ["whisper", "blowing", "oil", "rubbing", "tapping"], false],
-                    [6888, ["whisper", "rubbing"], false],
-                    [7047, ["whisper", "liquid", "oil", "blowing", "eartouching", "rubbing", "tapping"], false],
-                    [7607, ["liquid"], false],
-                    [7653, ["whisper", "oil", "rubbing"], false],
-                    [7704, ["whisper", "blowing", "eartouching", "rubbing"], false],
-                    [7776, ["whisper", "blowing", "eartouching", "rubbing"], false],
-                    [7966, ["whisper", "blowing", "oil", "eartouching", "rubbing", "tapping"], false],
-                    [8442, ["whisper", "rubbing"], false],
-                    [8767, ["whisper", "blowing", "gel", "rubbing", "tapping"], false],
-                    [9198, ["whisper", "blowing", "rubbing", "eartouching"], false],
-                    [9313, ["whisper", "blowing", "rubbing", "eartouching"], false],
-                    [9416, ["whisper", "blowing", "rubbing", "eartouching", "paper"], false],
-                    [9632, ["whisper", "blowing", "oil", "rubbing", "eartouching"], false],
-                    [10114, ["whisper", "blowing", "foam", "rubbing", "eartouching"], false],
-                    [10267, ["whisper", "blowing", "gel", "rubbing", "eartouching"], false],
-                    [10419, ["whisper", "blowing", "rubbing", "eartouching"], false],
-                    [10504, ["whisper", "blowing", "oil", "rubbing", "eartouching"], false],
-                    [10941, ["blowing", "gel", "rubbing", "eartouching"], false],
-                    [11050, ["whisper", "blowing", "rubbing", "eartouching"], false]
-                ],
-                "artist": "Patra_Suou"
-            },
-            "JWbK9c7GzJY": {
-                "perference": [
-                    [0, ["opening"], false],
-                    [19, ["whisper", "blowing", "rubbing", "liquid", "spray", "eartouching"], false],
-                    [366, ["whisper", "eartouching", "rubbing", "oil", "blowing", "brushing", "talking"], false],
-                    [1006, ["whisper", "rubbing", "foam", "brushing", "sponge", "eartouching", "liquid"], false],
-                    [1755, ["whisper", "rubbing", "eartouching", "oil", "blowing"], false],
-                    [2623, ["whisper", "rubbing", "brushing"], false],
-                    [2955, ["whisper", "rubbing", "eartouching", "heartbeat", "talking"], false]
-                ],
-                "artist": "Patra_Suou"
-            }
-        }
-    ), [])
-
     const translateData = useMemo(() => (
         {
             "nav": {
@@ -617,23 +443,33 @@ export const VideoPlayerProvider = (props) => {
     };
 
     const timeConverter = (time) => {
+        const timeDiff = new Date() - new Date(time);
         return (
-            (new Date() - new Date(time)) >= 31557600000 ? `${Math.floor(((new Date() - new Date(time)) / 31557600000))} ${translateData["meter"]["time unit6"][currentLanguage]}` :
-                (new Date() - new Date(time)) >= 2592000000 ? `${Math.floor(((new Date() - new Date(time)) / 2592000000))} ${translateData["meter"]["time unit5"][currentLanguage]}` :
-                    (new Date() - new Date(time)) >= 86400000 ? `${Math.floor(((new Date() - new Date(time)) / 86400000))} ${translateData["meter"]["time unit4"][currentLanguage]}` :
-                        (new Date() - new Date(time)) >= 3600000 ? `${Math.floor(((new Date() - new Date(time)) / 3600000))} ${translateData["meter"]["time unit3"][currentLanguage]}` :
-                            (new Date() - new Date(time)) >= 60000 ? `${Math.floor(((new Date() - new Date(time)) / 60000))} ${translateData["meter"]["time unit2"][currentLanguage]}` :
-                                `${Math.floor(((new Date() - new Date(time)) / 1000))} ${translateData["meter"]["time unit1"][currentLanguage]}`
+            timeDiff >= 31557600000 ? `${Math.floor((timeDiff / 31557600000))} ${translateData["meter"]["time unit6"][currentLanguage]}` :
+                timeDiff >= 2592000000 ? `${Math.floor((timeDiff / 2592000000))} ${translateData["meter"]["time unit5"][currentLanguage]}` :
+                    timeDiff >= 86400000 ? `${Math.floor((timeDiff / 86400000))} ${translateData["meter"]["time unit4"][currentLanguage]}` :
+                        timeDiff >= 3600000 ? `${Math.floor((timeDiff / 3600000))} ${translateData["meter"]["time unit3"][currentLanguage]}` :
+                            timeDiff >= 60000 ? `${Math.floor((timeDiff / 60000))} ${translateData["meter"]["time unit2"][currentLanguage]}` :
+                                `${Math.floor((timeDiff / 1000))} ${translateData["meter"]["time unit1"][currentLanguage]}`
         )
     };
 
     // dynamic data loading function
-    async function importAPIData(id, type) {
+    async function importYTDataAPI(id, type) {
         try {
             const module = await import(`../../youtubeDataAPI/${type}/${id}.json`);
             return module;
         } catch (error) {
-            console.log(error);
+            console.log("importYTDataAPI error ", error);
+        }
+    }
+
+    async function importInnerDataAPI(id, type) {
+        try {
+            const module = await import(`../../innerDataAPI/${type}/${id}.json`);
+            return module;
+        } catch (error) {
+            console.log("importInnerDataAPI error ", error);
         }
     }
 
@@ -698,7 +534,6 @@ export const VideoPlayerProvider = (props) => {
             skipPreferences,
             tempSkipPreferences,
             artistData,
-            videoData,
             location,
             translateData,
             currentLanguage,
@@ -712,7 +547,8 @@ export const VideoPlayerProvider = (props) => {
                 saveSkipPreferences: saveSkipPreferences,
                 onReady: onReady,
                 setCurrentLanguage: setCurrentLanguage,
-                importAPIData: importAPIData,
+                importYTDataAPI: importYTDataAPI,
+                importInnerDataAPI: importInnerDataAPI,
                 setArtistFavoriteData: setArtistFavoriteData,
                 unitConverter: unitConverter,
                 timeConverter: timeConverter

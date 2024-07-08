@@ -10,7 +10,7 @@ function Card(props) {
     const [apiData, setAPIData] = useState();
 
     useEffect(() => {
-        context.actions.importAPIData(props.videoId, "video")
+        context.actions.importYTDataAPI(props.videoId, "video")
             .then(module => {
                 setAPIData(module["items"][0]);
             })
@@ -35,7 +35,7 @@ function Card(props) {
                         <Link to={`${context.root}/artist/${props.artist}`}>
                             <img className="cardInfoImg" src={`${context.root}/channelImg/${props.artist}.jpg`} alt="channel icon of the artist"></img>
                         </Link> :
-                        undefined
+                        null
                 }
                 <div className="cardInfoRight">
                     <Link className="cardLink" to={`${context.root}/video/${props.videoId}`}>
@@ -50,7 +50,7 @@ function Card(props) {
                                     {props.artist}
                                 </div>
                             </Link> :
-                            undefined
+                            null
                     }
                     <div className="cardInfoVideo">
                         {apiData && `${context.actions.unitConverter(apiData["statistics"]["viewCount"], 1)} ${context.translateData["meter"]["view"][context.currentLanguage]}`}

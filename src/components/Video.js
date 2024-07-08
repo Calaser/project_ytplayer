@@ -13,12 +13,16 @@ import VideoPlayerContext from "./context/VideoPlayerContext";
 function Player() {
     const context = useContext(VideoPlayerContext);
     const { id } = useParams();
+    const [videoData, setVideoData] = useState(null);
+
+    useEffect(() => {
+        context.actions.importInnerDataAPI(id, "video")
+            .then(module => {
+                setVideoData(module);
+            })
+    }, [context.actions, id])
 
     context.player.current = null;
-
-    // let currentKey = null;
-    // if (currentKey !== context.location.key)
-    //     currentKey = context.location.key;
 
     // init time reset
     useEffect(() => {
@@ -32,57 +36,59 @@ function Player() {
 
     // execute preference function
     useEffect(() => {
-        // videoData[id][perference] 為該影片的資料 clip為其中一個片段的資料 clip[1]是該片段的所有tag clip[2]目前用來記錄該片段是否跳過
-        context.videoData[id]["perference"].forEach(clip => {
-            clip[1].every(tag => { //every:forEach but need a return: true = loop continued / false = loop break, use break for currectly multi tag check
-                if (context.skipPreferences[tag] === undefined) {
-                    console.log(`影片資料中含有錯誤tag: ${tag}`);
-                    return true;
-                }
-                if (context.skipPreferences[tag][0]) {
-                    clip[2] = true;
-                    return false;
-                }
-                else {
-                    clip[2] = false;
-                    return true;
-                }
+        // videoData[preference] 為該影片的資料 clip為其中一個片段的資料 clip[1]是該片段的所有tag clip[2]目前用來記錄該片段是否跳過
+        if (videoData) {
+            videoData["preference"].forEach(clip => {
+                clip[1].every(tag => { //every:forEach but need a return: true = loop continued / false = loop break, use break for currectly multi tag check
+                    if (context.skipPreferences[tag] === undefined) {
+                        console.log(`影片資料中含有錯誤tag: ${tag}`);
+                        return true;
+                    }
+                    if (context.skipPreferences[tag][0]) {
+                        clip[2] = true;
+                        return false;
+                    }
+                    else {
+                        clip[2] = false;
+                        return true;
+                    }
+                });
             });
-        });
-        // 每時間單位根據videoData檢查對應秒數是否跳過 若是則執行略過
-        const interval = setInterval(() => {
-            if (context.player.current && context.player.current.getPlayerState() === 1) {
-                let time = 0;
-                let currentTime = context.player.current.getCurrentTime() !== undefined ? context.player.current.getCurrentTime().toFixed(0) : 0;
-                for (let i = 0; context.videoData[id]["perference"][i]; i++) {
-                    if (currentTime >= context.videoData[id]["perference"][i][0] && currentTime < (context.videoData[id]["perference"][i + 1] ? context.videoData[id]["perference"][i + 1][0] : Infinity) && context.videoData[id]["perference"][i][2]) { //符合skip條件
-                        // console.log(`第${i}段觸發
-                        //                 現在秒數:${currentTime}
-                        //                 時間段為${videoData[id]["perference"][i][0]}~${(videoData[id]["perference"][i + 1] ? videoData[id]["perference"][i + 1][0] : "last")}
-                        // `);
-                        let j = i + 1;
-                        while (true) { //若後面有連接著的跳過則記錄完才一次跳過
-                            if (!context.videoData[id]["perference"][j]) { //本part為最後一段
-                                time = 99999;
-                                break;
+            // 每時間單位根據videoData檢查對應秒數是否跳過 若是則執行略過
+            const innerInterval = setInterval(() => {
+                if (context.player.current && context.player.current.getPlayerState() === 1) {
+                    let time = 0;
+                    let currentTime = context.player.current.getCurrentTime() !== undefined ? context.player.current.getCurrentTime().toFixed(0) : 0;
+                    for (let i = 0; videoData["preference"][i]; i++) {
+                        if (currentTime >= videoData["preference"][i][0] && currentTime < (videoData["preference"][i + 1] ? videoData["preference"][i + 1][0] : Infinity) && videoData["preference"][i][2]) { //符合skip條件
+                            // console.log(`第${i}段觸發
+                            //                 現在秒數:${currentTime}
+                            //                 時間段為${videoData["preference"][i][0]}~${(videoData["preference"][i + 1] ? videoData["preference"][i + 1][0] : "last")}
+                            // `);
+                            let j = i + 1;
+                            while (true) { //若後面有連接著的跳過則記錄完才一次跳過
+                                if (!videoData["preference"][j]) { //本part為最後一段
+                                    time = 99999;
+                                    break;
+                                }
+                                else if (!videoData["preference"][j][2]) { //非最後但skip到此為止
+                                    time = videoData["preference"][j][0];
+                                    break;
+                                }
+                                j++;
                             }
-                            else if (!context.videoData[id]["perference"][j][2]) { //非最後但skip到此為止
-                                time = context.videoData[id]["perference"][j][0];
-                                break;
-                            }
-                            j++;
+                            break;
                         }
-                        break;
+                    }
+                    if (time) {
+                        context.player.current.seekTo(time);
+                        // maybe pop a message to prompt user some part is skipped.
                     }
                 }
-                if (time) {
-                    context.player.current.seekTo(time);
-                    // maybe pop a message to prompt user some part is skipped.
-                }
-            }
-        }, 500)
-        return () => clearInterval(interval);
-    }, [context.player, context.skipPreferences, context.videoData, id])
+            }, 500)
+            return () => clearInterval(innerInterval);
+        }
+    }, [context.player, context.skipPreferences, videoData, id])
 
     // progressing bar time stamp maker
     useEffect(() => {
@@ -131,10 +137,10 @@ function Player() {
 
         switch (mode) {
             case 1: // same artist
-                data = Object.entries(context.artistData).filter(artist => context.videoData[id]["artist"] === artist[0])[0];
+                data = Object.entries(context.artistData).filter(artist => videoData["artist"] === artist[0])[0];
                 break;
             case 2: // different artist
-                data = Object.entries(context.artistData).filter(artist => context.videoData[id]["artist"] !== artist[0])[0];
+                data = Object.entries(context.artistData).filter(artist => videoData["artist"] !== artist[0])[0];
                 break;
             default:
                 console.log("Unexpected mode!");
@@ -162,16 +168,18 @@ function Player() {
     }
 
     useEffect(() => {
-        setSameArtistVideos(videoListCreator(1, 2));
-        setDifferentArtistVideos(videoListCreator(2, 4));
-    }, [id]);
+        if (videoData) {
+            setSameArtistVideos(videoListCreator(1, 2));
+            setDifferentArtistVideos(videoListCreator(2, 4));
+        }
+    }, [id, videoData]);
 
     return (
         <main className="wrapper">
             <div className="playerLayer">
                 <Iframe />
-                <ClipButton />
-                <ProgressBar />
+                <ClipButton videoData={videoData} />
+                <ProgressBar videoData={videoData} />
                 <VideoInformation />
             </div>
             <div className="playerSideBar">
