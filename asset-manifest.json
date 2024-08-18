@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Project_YTPlayer/static/css/main.507705c1.css",
-    "main.js": "/Project_YTPlayer/static/js/main.fb1c4e74.js",
+    "main.css": "/Project_YTPlayer/static/css/main.72e90e8a.css",
+    "main.js": "/Project_YTPlayer/static/js/main.3380c238.js",
     "static/js/418.1fdd86af.chunk.js": "/Project_YTPlayer/static/js/418.1fdd86af.chunk.js",
     "static/js/376.73ff290d.chunk.js": "/Project_YTPlayer/static/js/376.73ff290d.chunk.js",
     "static/js/320.e05154f1.chunk.js": "/Project_YTPlayer/static/js/320.e05154f1.chunk.js",
@@ -15,11 +15,11 @@
     "static/js/229.4fef5075.chunk.js": "/Project_YTPlayer/static/js/229.4fef5075.chunk.js",
     "static/js/745.6b5b4362.chunk.js": "/Project_YTPlayer/static/js/745.6b5b4362.chunk.js",
     "index.html": "/Project_YTPlayer/index.html",
-    "main.507705c1.css.map": "/Project_YTPlayer/static/css/main.507705c1.css.map",
-    "main.fb1c4e74.js.map": "/Project_YTPlayer/static/js/main.fb1c4e74.js.map"
+    "main.72e90e8a.css.map": "/Project_YTPlayer/static/css/main.72e90e8a.css.map",
+    "main.3380c238.js.map": "/Project_YTPlayer/static/js/main.3380c238.js.map"
   },
   "entrypoints": [
-    "static/css/main.507705c1.css",
-    "static/js/main.fb1c4e74.js"
+    "static/css/main.72e90e8a.css",
+    "static/js/main.3380c238.js"
   ]
 }
