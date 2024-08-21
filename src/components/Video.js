@@ -167,12 +167,19 @@ function Player() {
         return videoJSX;
     }
 
+    const [isListGenerated, setIsListGenerated] = useState(false);
+    
     useEffect(() => {
-        if (videoData) {
+        if (videoData && !isListGenerated) {
             setSameArtistVideos(videoListCreator(1, 2));
             setDifferentArtistVideos(videoListCreator(2, 4));
+            setIsListGenerated(true);
         }
     }, [id, videoData]);
+
+    useEffect(() => {
+            setIsListGenerated(false);
+    }, [id]);
 
     return (
         <main className="wrapper">

@@ -457,10 +457,37 @@ export const VideoPlayerProvider = (props) => {
     // dynamic data loading function
     async function importYTDataAPI(id, type) {
         try {
-            const module = await import(`../../youtubeDataAPI/${type}/${id}.json`);
-            return module;
+            if (type === "artist") {
+                const getArtistLocalData = await JSON.parse(localStorage.getItem(`YTDataAPI ${id}`));
+                if (getArtistLocalData !== undefined && getArtistLocalData !== null) {
+                    if (Date.now() - getArtistLocalData["latestFetch"] >= 1800000) {
+                        const data = await fetchData(id, type);
+                        return data.data;
+                    }
+                    else {
+                        return getArtistLocalData.data;
+                    }
+                }
+                else {
+                    fetchData(id, type);
+                    const data = await fetchData(id, type);
+
+                    return data.data;
+                }
+            }
+            else {
+                const module = await import(`../../youtubeDataAPI/${type}/${id}.json`);
+                return module;
+            }
         } catch (error) {
             console.log("importYTDataAPI error ", error);
+        }
+
+        async function fetchData(id, type) {
+            const data = await fetch(`https://us-central1-test-project-98fd0.cloudfunctions.net/api/channels?ids=${id}`).then(res => res.json())
+            data["latestFetch"] = Date.now();
+            localStorage.setItem(`YTDataAPI ${id}`, JSON.stringify(data));
+            return data;
         }
     }
 
@@ -487,7 +514,7 @@ export const VideoPlayerProvider = (props) => {
         if (getMajorVolume !== undefined && getMajorVolume !== null)
             setMajorVolume(getMajorVolume);
 
-        if (JSON.parse(localStorage.getItem("skipPreferences"))) { //僅更新項目狀態以避免更新後的項目被舊版的項目覆寫
+        if (JSON.parse(localStorage.getItem("skipPreferences"))) { //僅更新項目狀態以避免更新後的項目被舊版項目覆寫
             const localSkipPreferences = JSON.parse(localStorage.getItem("skipPreferences"));
             const currentSkipPreferences = skipPreferences;
             Object.entries(localSkipPreferences).forEach(item => {
