@@ -1,5 +1,5 @@
 # Project_YTPlayer
-一個使用React開發的一頁式Youtube影片撥放器。
+一個使用React開發的單頁式(SPA)Youtube影片撥放器。
 
 [**>> 點此前往網站 <<**](https://calaser.github.io/Project_YTPlayer/)
 
@@ -12,7 +12,7 @@
 撥放器頁面則有進度條與按鈕，可以在各個段落間切換。
 
 ## 網站功能
-一個一頁式網站，主要由首頁/設定/撥放器/作者頁面組成。
+一個主要由首頁/設定/撥放器/作者頁面組成的單頁式網站。
 
 + **首頁**：依據資料生成陳列影片的頁面，方式近似於Youtube。
 + **設定**：主要由兩個功能，目前功能如下：
@@ -28,7 +28,7 @@
   - 段落按鈕: 顯示前一個/當前/後一個段落的tag，並且可以點擊以切換片段。
   - 其他影片推薦: 在撥放器側邊/下方顯示其他相關影片。
 + **作者**：
-  - 作者資料: 顯示YouTube Data API獲得的資料。
+  - 作者資料: 顯示YouTube Data API獲得的資料。現在此資料由自己架構的Firebase API提供。
   - 影片列表: 顯示該作者的影片。
     
 ## 相關元素
@@ -51,6 +51,12 @@
   - JSX
   - SPA (React router v6 / useLocation)
   - Context
++ RESTful API (backend)
+  - Firebase functions
+  - Firestore
+  - node.js / express
+    * CORS
+    * rate limit
 
 ## 資料來源
 Youtube iframe api and relative function:<br />
