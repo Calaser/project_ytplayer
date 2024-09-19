@@ -56,6 +56,7 @@ export const VideoPlayerProvider = (props) => {
         }
     );
     const [tempSkipPreferences, setTempSkipPreferences] = useState({});
+    const [isDarkThemeOn, setIsDarkThemeOn] = useState(false);
 
     const artistData = useMemo(() => (
         {
@@ -528,6 +529,12 @@ export const VideoPlayerProvider = (props) => {
         if (getArtistFavoriteData !== undefined && getArtistFavoriteData !== null)
             setArtistFavoriteData(getArtistFavoriteData);
 
+        const getIsDarkThemeOn = JSON.parse(localStorage.getItem("isDarkThemeOn"));
+        if (getIsDarkThemeOn !== undefined && getIsDarkThemeOn !== null)
+            setIsDarkThemeOn(getIsDarkThemeOn)
+        else
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setIsDarkThemeOn(true) : setIsDarkThemeOn(false);
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -551,6 +558,10 @@ export const VideoPlayerProvider = (props) => {
         localStorage.setItem("artistFavoriteData", JSON.stringify(artistFavoriteData));
     }, [artistFavoriteData])
 
+    useEffect(() => {
+        localStorage.setItem("isDarkThemeOn", JSON.stringify(isDarkThemeOn));
+    }, [isDarkThemeOn])
+
     return (
         <VideoPlayerContext.Provider value={{
             root,
@@ -565,6 +576,7 @@ export const VideoPlayerProvider = (props) => {
             translateData,
             currentLanguage,
             artistFavoriteData,
+            isDarkThemeOn,
             actions: {
                 setVideoId: setVideoId,
                 setMajorVolume: setMajorVolume,
@@ -578,7 +590,8 @@ export const VideoPlayerProvider = (props) => {
                 importInnerDataAPI: importInnerDataAPI,
                 setArtistFavoriteData: setArtistFavoriteData,
                 unitConverter: unitConverter,
-                timeConverter: timeConverter
+                timeConverter: timeConverter,
+                setIsDarkThemeOn: setIsDarkThemeOn
             }
         }}>
             {props.children}

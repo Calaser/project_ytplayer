@@ -14,7 +14,7 @@ function App() {
   const context = useContext(VideoPlayerContext);
 
   return (
-    <div>
+    <div className={context.isDarkThemeOn ? "dark" : "light"}>
       <Header />
       <Routes>
         <Route path={`${context.root}`} element={<Home />} />
